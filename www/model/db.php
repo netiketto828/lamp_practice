@@ -31,7 +31,19 @@ function fetch_all_query($db, $sql, $params = array()){
   try{
     $statement = $db->prepare($sql);
     $statement->execute($params);
-    return $statement->fetchAll();
+    $data = $statement->fetchAll();
+
+    foreach($data as &$hvalues){
+      foreach($hvalues as &$hvalue){
+        if(is_numeric($hvalue) === false){
+          $hvalue = h($hvalue);
+        }
+      }
+      unset($hvalue);
+    }
+    unset($hvalues);
+
+    return $data;
   }catch(PDOException $e){
     set_error('データ取得に失敗しました。');
   }
