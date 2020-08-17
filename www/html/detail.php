@@ -20,7 +20,6 @@ if(get_post('order_id') !== ''){
 }else if(get_post('order_id') === ''){
     if(get_session($order_id) !== ''){
         $order_id = get_session($order_id);
-        var_dump($order_id);
     }else{
         redirect_to(ORDER_URL);
     }

@@ -31,7 +31,7 @@ try{
   set_error('ユーザー登録に失敗しました。');
   redirect_to(SIGNUP_URL);
 }
-var_dump($SESSION['csrf_token']);
+
 set_message('ユーザー登録が完了しました。');
 login_as($db, $name, $password);
 redirect_to(HOME_URL);

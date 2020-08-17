@@ -73,7 +73,6 @@
                   <input  type="text" name="stock" value="<?php print($item['stock']); ?>">
                   個
                 </div>
-                <input type="hidden" name="token" value="<?php print($token); ?>">
                 <input type="submit" value="変更" class="btn btn-secondary">
                 <input type="hidden" name="token" value="<?php print($token); ?>">
                 <input type="hidden" name="item_id" value="<?php print($item['item_id']); ?>">

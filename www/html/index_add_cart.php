@@ -13,7 +13,6 @@ if(is_valid_csrf_token($_POST['token']) === false){
   redirect_to(LOGIN_URL);
 }
 
-
 if(is_logined() === false){
   redirect_to(LOGIN_URL);
 }
@@ -29,5 +28,7 @@ if(add_cart($db,$user['user_id'], $item_id)){
 } else {
   set_error('カートの更新に失敗しました。');
 }
+
+
 
 redirect_to(HOME_URL);
